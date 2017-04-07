@@ -19,4 +19,4 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
-Route::get('/sboard', 'HomeController@sboard');
+Route::get('/signal', 'SignalController@index');
