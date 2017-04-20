@@ -76,25 +76,18 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Getting Strated!!
+                    Getting Strated
 
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Javascript</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <a href="/js">Javascript</a>
+                    <a href="/js">Javascript</a>
+                    <a href="/js">Javascript</a>
+                    <a href="/js">Javascript</a>
                 </div>
             </div>
         </div>
     </body>
 </html>
- <?php
-
-//$now_timestamp = time();
-
-//echo $now_titmestamp;
-
-?>
+ 

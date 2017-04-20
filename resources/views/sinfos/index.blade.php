@@ -1,4 +1,4 @@
-@extends('layouts.signal_master_m')
+@extends('layouts.sinfos_master')
 
 @section('content')
         <!-- Display Validation Errors -->
@@ -9,27 +9,23 @@
         <thead>
           <tr>
               <th>::Scode::</th>
-              <th>::TS Flag::</th>
+              <th>::SName::</th>
               <th>::Del::</th>
           </tr>
         </thead>
         <tbody>
-         @forelse($tsignals as $tsignal)
+         @forelse($sinfos as $sinfo)
           <tr>
-            <td>{{ $tsignal->scode }}
-            <div>
-		    {{-- <img src="http://chart.mt.co.kr/chart_body.php?Code={{ $tsignal->scode }} " alt="" /> --}}
-	        </div>
-    </td>
-            <td>{{ $tsignal->tsignal_flag }}
-            @if($tsignal->tsignal_color == "f") (구름) @else (햇빛) @endif
+            <td>{{ $sinfo->scode }}</td>
+            <td>{{ $sinfo->sname }}
+            @if($sinfo->skind == "kd") (K) @endif
             </td>
             <td>
-                <form action="{{ url('tsignal/'.$tsignal->id) }}" method="POST">
+                <form action="{{ url('sinfos/'.$sinfo->id) }}" method="POST">
                     {{ csrf_field() }}
                     {{ method_field('DELETE') }}
 
-                    <button type="submit" id="delete-task-{{ $tsignal->id }}" name="action" class="btn-floating btn-tiny waves-effect waves-light red">
+                    <button type="submit" id="delete-task-{{ $sinfo->id }}" name="action" class="btn-floating btn-tiny waves-effect waves-light red">
                         <i class="material-icons">delete</i>
                     </button>
                 </form>
@@ -124,17 +120,15 @@
             <div class="row">
                 <div class="input-field col s4">
                     <i class="material-icons prefix">mode_edit</i>
-                    <input placeholder="S Name" id="sname" name="sname" type="text" class="validate">
+                    <input placeholder="S Code" id="scode" name="scode" type="text" class="validate">
+                    <label for="scode">S Code</label>
+                </div>
+                <div class="input-field col s4">
+                    <input id="sname" name="sname" type="text" class="validate">
                     <label for="sname">S Name</label>
                 </div>
                 <div class="input-field col s4">
-                    <input id="scode" name="scode" type="text" class="validate">
-                    <label for="scode">S Code</label>
                     
-                </div>
-                <div class="input-field col s4">
-                    <input id="skind" name="skind" type="text" class="validate">
-                    <label for="skind">S Kind(K)</label>
                 </div>
             </div>
             <div class="row">

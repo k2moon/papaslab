@@ -12,11 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('start');
 });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
+Route::resource('sinfos', 'SinfosController');
+Route::resource('tsignals', 'TsignalsController');
+Route::resource('buynsells', 'BuynsellsController');
 
 Route::get('/signal', 'SignalController@index');
