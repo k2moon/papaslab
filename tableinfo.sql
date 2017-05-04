@@ -22,20 +22,13 @@ CREATE TABLE `password_resets` (
   KEY `password_resets_email_index` (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-CREATE TABLE `sinfos` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `scode` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `sname` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `skind` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `history` varchar(1000) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 CREATE TABLE `tsignals` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `sname` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `scode` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `skind` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `history` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tsignal_flag` char(1) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tsignal_color` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tsignal_price` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -45,7 +38,8 @@ CREATE TABLE `tsignals` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
 
 CREATE TABLE `users` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
