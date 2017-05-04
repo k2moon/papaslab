@@ -5,59 +5,46 @@
 <div class="container">
     <div class="section">
         <div class="row">
-           <form class="col s12" action="{{ route('tsignals.store') }}" method="POST">
+           <form class="col s12" action="{{ route('buynsells.store') }}" method="POST">
             {{ csrf_field() }}
+            <input id="tsignal_id" name="tsignal_id" type="hidden" class="validate" value="{{ $tsignals_show->id }}">
+            <input id="sname" name="sname" type="hidden" class="validate" value="{{ $tsignals_show->sname }}">
+            <input id="scode" name="scode" type="hidden" class="validate" value="{{ $tsignals_show->scode }}">
+            
+            <div class="row">
+                <div class="input-field col s12">
+                    <h4>
+                    <i class="material-icons">shopping_cart</i>
+                    Buy N Sell Create
+                    </h4>                    
+                </div>
+            </div>
+           
             <div class="row">
                 <div class="input-field col s4">
                     <i class="material-icons prefix">mode_edit</i>
-                    <input placeholder="S Name" id="sname" name="sname" type="text" class="validate">
-                    <label for="sname">S Name</label>
+                    <input id="buy_price" name="buy_price" type="text" class="validate">
+                    <label for="buy_price">BUY Price</label>
                 </div>
                 <div class="input-field col s4">
-                    <input id="scode" name="scode" type="text" class="validate">
-                    <label for="scode">S Code</label>
-                    
+                    <input id="base_price" name="base_price" type="text" class="validate">
+                    <label for="base_price">BASE Price</label>
                 </div>
                 <div class="input-field col s4">
-                    <input id="skind" name="skind" type="text" class="validate">
-                    <label for="skind">S Kind(K)</label>
+                    <input id="buy_date" name="buy_date" type="text" class="validate">
+                    <label for="buy_date">BUY Date</label>
                 </div>
             </div>
-            <div class="row">
-                <div class="input-field col s4">
-                    <i class="material-icons prefix">mode_edit</i>
-                    <input id="tsignal_color" name="tsignal_color" type="text" class="validate">
-                    <label for="tsignal_color">TS Color</label>
-                </div>
-                <div class="input-field col s4">
-                    <input id="tsignal_flag" name="tsignal_flag" type="text" class="validate">
-                    <label for="tsignal_flag">TS Flag</label>
-                </div>
-                <div class="input-field col s4">
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s4">
-                    <i class="material-icons prefix">mode_edit</i>
-                    <input placeholder="TS Price" id="tsignal_price" name="tsignal_price" type="text" class="validate">
-                    <label for="tsignal_price">TS Price</label>
-                </div>
-                <div class="input-field col s4">
-                    <input placeholder="TS Date" id="tsignal_date" name="tsignal_date" type="text" class="validate">
-                    <label for="tsignal_date">TS Date</label>
-                </div>
-                <div class="input-field col s4">
-                </div>
-            </div>
+
             <div class="row">
                 <div class="input-field col s4">
                 <i class="material-icons prefix">mode_edit</i>
-                    <input id="low_price" name="low_price" type="text" class="validate">
-                    <label for="low_price">Low Price</label>
+                    <input id="sell_price" name="sell_price" type="text" class="validate" value="0">
+                    <label for="sell_price">SELL Price</label>
                 </div>
                 <div class="input-field col s4">
-                    <input id="low_date" name="low_date" type="text" class="validate">
-                    <label for="low_date">Low Date</label>
+                    <input id="sell_date" name="sell_date" type="text" class="validate">
+                    <label for="sell_date">SELL Date</label>
                 </div>
                 <div class="input-field col s4">
                     

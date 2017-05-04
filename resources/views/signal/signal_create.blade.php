@@ -8,6 +8,11 @@
            <form class="col s12" action="{{ route('tsignals.store') }}" method="POST">
             {{ csrf_field() }}
             <div class="row">
+                <div class="input-field col s12">
+                    <h4>Singnal Create</h4>                    
+                </div>
+            </div>
+            <div class="row">
                 <div class="input-field col s4">
                     <i class="material-icons prefix">mode_edit</i>
                     <input placeholder="S Name" id="sname" name="sname" type="text" class="validate">

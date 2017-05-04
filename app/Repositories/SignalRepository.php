@@ -32,7 +32,6 @@ class SignalRepository
      public function __construct()
      {
         //$this->middleware('auth');
-        $this->sinfo = new Sinfo;
         $this->tsignal = new Tsignal;
         $this->buynsell = new Buynsell;
      }

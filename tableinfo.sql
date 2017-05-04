@@ -6,15 +6,19 @@ http://symfony.com/projects/laravel 에서 라라벨이 사용하는 심포니 �
 CREATE TABLE `buynsells` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `tsignal_id` int(11) NOT NULL,
-  `buy_price` int(11) NOT NULL,
-  `sell_price` int(11) NOT NULL,
-  `base_price` int(11) NOT NULL,
-  `buy_date` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `sell_date` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `sname` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `scode` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `buy_price` int(11) DEFAULT NULL,
+  `base_price` int(11) DEFAULT NULL,
+  `sell_price` int(11) DEFAULT NULL,
+  `buy_date` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `sell_date` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
 
 CREATE TABLE `password_resets` (
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,

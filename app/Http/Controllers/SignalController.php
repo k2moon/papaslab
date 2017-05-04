@@ -50,8 +50,17 @@ class SignalController extends Controller
 
     public function slist()
     {
-        return view('signal.signal', [
-            'tsignals' => $this->tsignal::All(),   
+        
+        return view('signal.slist', [
+            'tsignals' => $this->tsignal::All(),    
+        ]);
+    }
+
+    public function elist()
+    {
+        
+        return view('signal.elist', [
+            'tsignals' => $this->buynsell::All(),    
         ]);
     }
 

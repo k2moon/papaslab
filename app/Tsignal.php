@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Tsignal extends Model
 {
     //
-    public function sinfs()
+    public function buynsells()
     {
-        return $this->belognsTo(Sinfo::class);
+        return $this->hasMany(Buynsell::class);
     }
 }

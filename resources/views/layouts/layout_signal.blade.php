@@ -24,7 +24,7 @@
       <ul id="nav-mobile" class="side-nav">
         <li><a href="/slist"><i class="material-icons">my_location</i>SIGNAL List</a></li>
         <li><a href="/tsignal"><i class="material-icons">my_location</i>SIGNAL Create</a></li>
-        <li><a href="/buynsell"><i class="material-icons">visibility</i>BUY A SELL Creaet</a></li>
+        <li><a href="/elist"><i class="material-icons">visibility</i>BUY A SELL List</a></li>
       </ul>
       <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
     </div>

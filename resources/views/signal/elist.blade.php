@@ -9,11 +9,11 @@
             @forelse($tsignals as $tsignal)
                 <li>
                     <div class="collapsible-header">
-                    @if($tsignal->tsignal_color == "fb") 
+                    @if($tsignal->tsignal->sell_price < 0) 
                         <span class="badge blue white-text" data-badge-caption="">{{ $tsignal->tsignal_flag }}</span> 
                         <i class="material-icons blue-text">filter_drama</i>
                         <i class="material-icons blue-text">call_received</i>
-                    @elseif($tsignal->tsignal_color == "wr") 
+                    @elseif($tsignal->sell_price > 0) 
                         <span class="badge red white-text" data-badge-caption="">{{ $tsignal->tsignal_flag }}</span> 
                         <i class="material-icons red-text">whatshot</i>
                         <i class="material-icons red-text">call_made</i>
@@ -23,7 +23,12 @@
                         <i class="material-icons">swap_horiz</i>
                         
                     @endif 
-                       {{ $tsignal->sname }} ({{ $tsignal->scode }}) S : ({{ $tsignal->tsignal_price }} / {{ $tsignal->tsignal_date }}) L : ({{ $tsignal->low_price }} / {{ $tsignal->low_date }})
+                       {{ $tsignal->sname }} ({{ $tsignal->scode }}) 
+                       BUY : ({{ $tsignal->buy_price }} / {{ $tsignal->buy_date }}) 
+                       BASE : ({{ $tsignal->base_price }}) 
+                       SELL : ({{ $tsignal->sell_price }} / {{ $tsignal->sell_date }})
+                       INCOME : ({{ $tsignal->sell_price - $tsignal->base_price }}) 
+                       
                     </div>
                     <div class="collapsible-body">
                         <div class="row">
