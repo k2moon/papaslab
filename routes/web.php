@@ -22,3 +22,9 @@ Route::resource('tsignals', 'TsignalsController');
 Route::resource('buynsells', 'BuynsellsController');
 
 Route::get('/signal', 'SignalController@index');
+Route::get('/tsignal', 'SignalController@tsignal');
+
+
+Route::get('/test', 'SignalController@test');
+Route::get('/slist', 'SignalController@slist');
+

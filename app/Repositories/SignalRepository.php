@@ -42,25 +42,18 @@ class SignalRepository
         return $table::All();
     }
 
-    public function getFind($id)
+    public function getFind($table, $id)
     {
-        return $table::find($table, $id);
+        return $table::find($id);
     }
 
     public function sinfo_tsignal_store($req)
     {
-        // sinfo insert
+        // tsignal insert
         $req_scode = $req->scode;
         $req_sname = $req->sname;
         $req_skind = $req->skind;
 
-        $this->sinfo->scode = $req_scode;
-        $this->sinfo->sname = $req_sname;
-        $this->sinfo->skind = $req_skind;
-        $this->sinfo->history = '';
-        $ret_sinfo = $this->sinfo->save();
-       
-        // tsignal insert
         $req_tsignal_flag = $req->tsignal_flag;
         $req_tsignal_color = $req->tsignal_color;
         $req_tsignal_price = str_replace(",","",$req->tsignal_price);
@@ -69,6 +62,10 @@ class SignalRepository
         $req_low_date = $req->low_date;
 
         $this->tsignal->scode = $req_scode;
+        $this->tsignal->scode = $req_name;
+        $this->tsignal->scode = $req_skind;
+        $this->tsignal->history = 'first insert';
+        
         $this->tsignal->tsignal_flag = $req_tsignal_flag;
         $this->tsignal->tsignal_color = $req_tsignal_color;
         $this->tsignal->tsignal_price = $req_tsignal_price;
@@ -77,7 +74,38 @@ class SignalRepository
         $this->tsignal->low_date = $req_low_date;
         $ret_tsignal = $this->tsignal->save();   
        
-        return $ret_sinfo+$ret_tsignal;
+        return $ret_tsignal;
+    }
+
+    public function sinfo_tsignal_update($table, $req, $req_id)
+    {
+        $update_id = getFind($table, $req_id);
+        // tsignal insert
+        $req_scode = $req->scode;
+        $req_sname = $req->sname;
+        $req_skind = $req->skind;
+
+        $req_tsignal_flag = $req->tsignal_flag;
+        $req_tsignal_color = $req->tsignal_color;
+        $req_tsignal_price = str_replace(",","",$req->tsignal_price);
+        $req_low_price = str_replace(",","",$req->low_price);
+        $req_tsignal_date = $req->tsignal_date;
+        $req_low_date = $req->low_date;
+
+        $this->tsignal->scode = $req_scode;
+        $this->tsignal->scode = $req_name;
+        $this->tsignal->scode = $req_skind;
+        $this->tsignal->history = 'first insert';
+        
+        $this->tsignal->tsignal_flag = $req_tsignal_flag;
+        $this->tsignal->tsignal_color = $req_tsignal_color;
+        $this->tsignal->tsignal_price = $req_tsignal_price;
+        $this->tsignal->low_price = $req_low_price;
+        $this->tsignal->tsignal_date = $req_tsignal_date;
+        $this->tsignal->low_date = $req_low_date;
+        $ret_tsignal = $this->update_id->save();   
+       
+        return $ret_tsignal;
     }
 
     public function delete($table, $id)

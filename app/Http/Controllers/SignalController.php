@@ -31,7 +31,6 @@ class SignalController extends Controller
      public function __construct(SignalRepository $signal)
      {
         //$this->middleware('auth');
-        $this->sinfo = new Sinfo;
         $this->tsignal = new Tsignal;
         $this->buynsell = new Buynsell;
         $this->signal = $signal;
@@ -44,13 +43,22 @@ class SignalController extends Controller
      */
     public function index()
     {
-        return view('signal.index', [
-            'sinfos' => $this->signal->getListAll($this->sinfo),    
-            'tsignals' => $this->signal->getListAll($this->tsignal),    
+        return view('signal.signal', [
+            'tsignals' => $this->tsignal::All(),    
         ]);
     }
 
-    
+    public function slist()
+    {
+        return view('signal.signal', [
+            'tsignals' => $this->tsignal::All(),   
+        ]);
+    }
+
+    public function tsignal()
+    {
+            return view('signal.tsignal_create');
+    }
 
     /**
      * Display the specified resource.
@@ -61,6 +69,11 @@ class SignalController extends Controller
     public function show($id)
     {
         //
+    }
+
+    public function test()
+    {
+            return view('test');
     }
     
 }
