@@ -8,6 +8,7 @@ CREATE TABLE `buynsells` (
   `tsignal_id` int(11) NOT NULL,
   `buy_price` int(11) NOT NULL,
   `sell_price` int(11) NOT NULL,
+  `base_price` int(11) NOT NULL,
   `buy_date` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
   `sell_date` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,

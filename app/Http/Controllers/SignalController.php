@@ -60,17 +60,12 @@ class SignalController extends Controller
             return view('signal.tsignal_create');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    public function buynsell()
     {
-        //
+            return view('signal.buynsell_create');
     }
 
+    
     public function test()
     {
             return view('test');
